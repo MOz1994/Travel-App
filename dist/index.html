@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>NLP</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
+
+
+
+<link href="main.css" rel="stylesheet"></head>
+
+<body>
+    <div>
+        <div>
+            <h2>Travel Planner </h2>
+        </div>
+
+
+        <div id='container'>
+            <div class="content" id="card">
+                <form name="infoForm" onsubmit="return Client.performAction(event)">
+                    <label for="text">My trip to:</label>
+                    <input type="text" name="city" id="city" placeholder="Enter your distenation City"><br>
+                    <label for="text"> Departing Date:</label>
+                    <input type="date" id="date" name="date">
+                    <label for="text">Returning  Date:</label>
+                    <input type="date" id="Edate" name="Edate">
+
+                    <input type="submit" value="Submit" id="go" class="btn">
+                </form>
+            </div>
+            <div id='entryHolder' class="eHolder">
+                <div class="imgCity" id="img"></div>
+                <div class="info">
+                    <div id="cityC" class="txt">
+                    </div>
+                    <div id="dateD" class="txt"></div>
+                    <div id="temp" class="txt">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+        <!-- <script src='app.js' type="text/javascript"></script> -->
+        <!-- <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script> -->
+<script type="text/javascript" src="main.js"></script></body>
+
+</html>
