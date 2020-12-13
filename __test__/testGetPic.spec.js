@@ -1,6 +1,7 @@
 import { getPic } from "../src/Client/j/getPicture"
 
-describe("Testing posting data functionality", () => {
+describe("Testing get data from API functionality", () => {
+  /// input for function
     let city = "Beijing";
     let country = "china";
     let pixKey = '19346321-dd66748d30a384e44d876a9ed';
@@ -8,7 +9,7 @@ describe("Testing posting data functionality", () => {
 
     // The test() function has two arguments - a string description, and an actual test as a callback function.  
     test("it shold get data correctly from api", async() => {
-        // Define the input for the function, if any, in the form of variables/array
+       
         const input = getPic(city, country, pixKey);
 
 

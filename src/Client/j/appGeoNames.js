@@ -1,14 +1,9 @@
-// Event listener to add function to existing HTML DOM element
 
 
-/* istanbul ignore next */
-document.getElementById('pdf').addEventListener('click', print);
-function print(){
-    var element = document.getElementById('container');
-html2pdf(element);
-}
+
+
 function performAction(event) {
-    /* istanbul ignore next */
+    
     event.preventDefault()
 
     getInfo().then(function(data) {
@@ -17,10 +12,10 @@ function performAction(event) {
 }
 
 const getInfo = async() => {
-    // let url = document.getElementById('newsUrl').value;
+    
     let cityTxt = document.getElementById('city').value
     let dDate = document.getElementById('date').value
-
+    //take the user returning date to calculate number of trip days. 
     let rDate = document.getElementById('Edate').value
 
     const request = await fetch('http://localhost:3000/username');
@@ -30,35 +25,29 @@ const getInfo = async() => {
         const keyWeather = allData.wKey;
         const keyPic = allData.pKey;
         const userName = allData.userName;
-        let baseURL = 'http://api.geonames.org/searchJSON?q=' + cityTxt + '&maxRows=1&username=mzoon94' ;//return username
-
-
-        ///////
+        let baseURL = 'http://api.geonames.org/searchJSON?q=' + cityTxt + '&maxRows=1&username='+userName ;
         const res = await fetch(baseURL);
-
         try {
             const data = await res.json();
-            /* Function to POST data */
             const country = data.geonames[0].countryName;
             const lat = data.geonames[0].lat;
             const lng = data.geonames[0].lng;
 
-
-
-
-
             await Client.postData('http://localhost:3000/wData', {
                     city: cityTxt,
                     countryName: country,
+                    //function to get Pic from pixabay API 
                     pic: await Client.getPic(cityTxt, country, keyPic),
+                    //function to get get weather from weatherbit API
                     temp: await Client.getWeather(lat, lng, keyWeather, dDate),
+                    //function to get number of days 
                     countDay: await calDays(dDate, rDate)
 
                 })
                 .then(
-
+                    //wait 500 ms then update user interface with the result
                     await wait(500),
-                     await updateUI(dDate)
+                    await updateUI(dDate)
                 )
         } catch (error) {
             console.log('error', error);

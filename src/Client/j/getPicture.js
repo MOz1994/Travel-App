@@ -9,7 +9,7 @@
              let baseURL = 'https://pixabay.com/api/?key=' + pixKey + '&q=' + country + '+landscape&image_type=photo';
              const request = await fetch(baseURL);
              const data = await request.json();
-             //if there was no picture return message
+             //if there was no picture then return message
              if (data.total == 0) {
                  return 'Sorry, there is no pic right now'
              } else {

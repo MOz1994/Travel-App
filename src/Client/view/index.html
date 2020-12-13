@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>NLP</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap" rel="stylesheet">
-    <script src="html2pdf.bundle.min.js"></script>
+
 
 
 </head>
@@ -13,7 +13,7 @@
 <body>
     <div>
         <div class="hIcon">
-            <h2>Travel Planner </h2><img id="picon" src="/img/vairpl.png" alt="travel" width="70" height="60"/>
+            <h2>Travel Planner </h2><img id="picon"alt="travel" width="70" height="60"/>
         </div>
 
 
@@ -27,7 +27,7 @@
                     <label for="text">Returning  Date:</label>
                     <input type="date" id="Edate" name="Edate">
 
-                    <input type="submit" value="Submit" id="go" class="btn">
+                    <input type="submit" value="Search" id="go" class="btn">
                 </form>
             </div>
             <div id='entryHolder' class="eHolder">
@@ -38,7 +38,7 @@
                     <div id="dateD" class="txt"></div>
                     <div id="temp" class="txt">
                     </div><br>
-                    <button id="pdf">Export</button>
+                    
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
 
 
         <!-- <script src='app.js' type="text/javascript"></script> -->
-        <!-- <script>
+        <script>
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
@@ -59,7 +59,7 @@
                     navigator.serviceWorker.register('/service-worker.js');
                 });
             }
-        </script> -->
+        </script>
 </body>
 
 </html>

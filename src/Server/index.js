@@ -41,7 +41,7 @@ app.get('/', function(req, res) {
         res.sendFile('dist/index.html')
 
     })
-    //send api
+    //send api keys
 app.get('/username', sendUname);
 
 function sendUname(req, res) {
@@ -68,13 +68,10 @@ function addFeel(req, res) {
     newEnrty = {
         countryName: req.body.countryName,
         city: req.body.city,
-        // lng: req.body.lng,
-        // minT: req.body.minTemp,
-        // maxTemp: req.body.maxTemp,
         pic: req.body.pic,
         temp: req.body.temp,
         cDate: req.body.countDay
-            // city: req.body.city,
+           
 
 
     }
